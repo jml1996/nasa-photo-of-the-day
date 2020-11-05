@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchPhoto = () => {
       axios
-        .get(`https://api.nasa.gov/planetary/apod?api_key=ltBWr9lWRC3A2m6I2h1FE9eHwjy0ErNe22WGa27D&date=2012-11-03`)
+        .get(`https://api.nasa.gov/planetary/apod?api_key=ltBWr9lWRC3A2m6I2h1FE9eHwjy0ErNe22WGa27D&date=2020-10-01`)
         .then((res) => {
           console.log(res.data);
           setApodData(res.data)
