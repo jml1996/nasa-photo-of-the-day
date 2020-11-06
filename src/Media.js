@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Youtube from "./Youtube";
+import styled, { keyframes } from "styled-components";
 
 export default function Photo(props) {
     const { mediaType, url } = props;
@@ -17,13 +18,17 @@ export default function Photo(props) {
     console.log(url);
 
     return (
-        <div>
+        <MediaStyle>
             {
             mediaType === "image" ?
-            <img src={url} alt="APOD" />
+            <img src={url} alt="APOD" width="100%" />
             : null
             // : <Youtube url={url} />
             }
-        </div>
+        </MediaStyle>
     )
 }
+
+const MediaStyle = styled.div`
+
+`

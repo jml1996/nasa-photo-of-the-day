@@ -5,6 +5,9 @@ import "./App.css";
 import Media from "./Media"
 import Explanation from "./Explanation";
 import Title from "./Title";
+import styled from "styled-components";
+import { BASE_URL, API_KEY } from './constants'
+
 
 function App() {
   const [apodData, setApodData] = useState([]);
@@ -12,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchPhoto = () => {
       axios
-        .get(`https://api.nasa.gov/planetary/apod?api_key=ltBWr9lWRC3A2m6I2h1FE9eHwjy0ErNe22WGa27D&date=2020-10-01`)
+        .get(`${BASE_URL}${API_KEY}&date=2020-10-02`)
         .then((res) => {
           console.log(res.data);
           setApodData(res.data)
@@ -23,12 +26,21 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <BigContainer>
       <Title title={apodData.title} />
       <Media mediaType={apodData.media_type} url={apodData.url} />
       <Explanation explanation={apodData.explanation} />
-    </div>
+    </BigContainer>
   );
 }
 
 export default App;
+
+const BigContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+  border: dotted;
+  margin: auto;
+`

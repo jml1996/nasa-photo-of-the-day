@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import styled from "styled-components";
 
 export default function Title(props) {
     const { title } = props;
 
     return (
-        <div>
+        <StyledTitle>
             <h1>
                 {title}
             </h1>
-        </div>
+        </StyledTitle>
     )
 }
+
+const StyledTitle = styled.div`
+    text-align: center;
+`
