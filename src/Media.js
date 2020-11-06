@@ -18,17 +18,13 @@ export default function Photo(props) {
     console.log(url);
 
     return (
-        <MediaStyle>
+        <div>
             {
             mediaType === "image" ?
             <img src={url} alt="APOD" width="100%" />
             : null
             // : <Youtube url={url} />
             }
-        </MediaStyle>
+        </div>
     )
 }
-
-const MediaStyle = styled.div`
-
-`
